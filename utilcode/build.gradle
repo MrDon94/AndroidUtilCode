@@ -35,6 +35,7 @@ dependencies {
     testImplementation "com.android.support:appcompat-v7:${support_version}"
     testImplementation "com.android.support:design:${support_version}"
     testImplementation 'org.greenrobot:eventbus:3.1.1'
+    testImplementation project(':utilcode')
 }
 
 //apply from: "${rootDir.path}/gradle/publish.gradle"

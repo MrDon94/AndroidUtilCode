@@ -1,7 +1,7 @@
 apply {
     plugin "com.android.library"
     plugin "kotlin-android"
-    plugin "kotlin-android-extensions"
+    plugin "maven-publish"
 }
 
 android {
@@ -24,25 +24,30 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.google.code.gson:gson:2.11.0'
 
     implementation "com.android.support:appcompat-v7:${support_version}"
     implementation "com.android.support:design:${support_version}"
 
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.robolectric:robolectric:4.3.1'
-    testImplementation 'com.google.code.gson:gson:2.8.5'
+    testImplementation 'com.google.code.gson:gson:2.11.0'
     testImplementation "com.android.support:appcompat-v7:${support_version}"
     testImplementation "com.android.support:design:${support_version}"
     testImplementation 'org.greenrobot:eventbus:3.1.1'
     testImplementation project(':utilcode')
 }
 
-//apply from: "${rootDir.path}/gradle/publish.gradle"
-//publish {
-//    name = "UtilCode"
-//    groupId = Config.depConfig.lib_utilcode.groupId
-//    artifactId = Config.depConfig.lib_utilcode.artifactId
-//    version = Config.depConfig.lib_utilcode.version
-//    website = "https://github.com/Blankj/AndroidUtilCode"
-//}
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.github.MrDon94'
+            artifactId = 'utilcode'
+            version = '1.0.0'
+
+            afterEvaluate {
+                from components.release
+            }
+        }
+    }
+}

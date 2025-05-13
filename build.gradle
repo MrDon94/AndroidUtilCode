@@ -1,6 +1,12 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.kotlin_version = '1.5.10'
+    ext {
+        minSdk = 16 // min sdk is 15, 16 is recommended
+        sdk = 29 // target sdk version
+        support_version = "28.0.0"
+        kotlin_version = '1.5.10'
+    }
+    
     repositories {
         google()
         mavenCentral()
@@ -12,11 +18,7 @@ buildscript {
 //        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'//这里
     }
 
-    ext {
-        minSdk = 16 // min sdk is 15, 16 is recommended
-        sdk = 29 // target sdk version
-        support_version = "28.0.0"
-    }
+
 }
 
 allprojects {

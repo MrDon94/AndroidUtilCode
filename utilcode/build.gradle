@@ -8,8 +8,6 @@ android {
     compileSdkVersion sdk
     defaultConfig {
         minSdkVersion minSdk
-        versionCode 1
-        versionName "1.30.6"
         consumerProguardFiles 'proguard-rules.pro'
     }
 
@@ -43,7 +41,7 @@ publishing {
         release(MavenPublication) {
             groupId = 'com.github.MrDon94'
             artifactId = 'utilcode'
-            version = '1.0.0'
+            version = '1.0.1'
 
             afterEvaluate {
                 from components.release

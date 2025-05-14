@@ -4,11 +4,11 @@ apply {
 }
 
 android {
-    compileSdkVersion sdk
+    compileSdkVersion 29
     defaultConfig {
         applicationId "com.github.utilcode"
-        minSdkVersion minSdk
-        targetSdkVersion sdk
+        minSdkVersion 14
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

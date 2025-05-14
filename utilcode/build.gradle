@@ -41,7 +41,7 @@ publishing {
         release(MavenPublication) {
             groupId = 'com.github.MrDon94'
             artifactId = 'utilcode'
-            version = '1.0.1'
+            version = '1.30.6'
 
             afterEvaluate {
                 from components.release
